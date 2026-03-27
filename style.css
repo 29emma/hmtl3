@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@900&family=Plus+Jakarta+Sans:wght@500;800&display=swap');
+
+:root {
+    --light-orange: #FFB38A; 
+    --soft-pink: #FFD1DC;
+    --butter-yellow: #FFF4BD;
+    --cream: #FFFAF5;
+    --dark: #331A0F;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--cream);
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--dark);
+    line-height: 1.4;
+}
+
+header {
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--dark);
+    position: sticky;
+    top: 0;
+    background: var(--cream);
+    z-index: 1000;
+}
+
+.logo { font-family: 'Outfit', sans-serif; font-size: 2.5rem; color: var(--light-orange); -webkit-text-stroke: 1.5px var(--dark); }
+
+nav a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 800;
+    margin-left: 20px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+nav a:hover { background: var(--light-orange); border-radius: 50px; color: white; }
+
+/* Bento Components */
+.container { padding: 60px 5%; }
+.bento { display: grid; gap: 25px; grid-template-columns: repeat(4, 1fr); }
+
+.img-box, .text-card {
+    border: 3px solid var(--dark);
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Grayscale Effect */
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: 0.5s ease;
+}
+
+.img-box:hover { transform: scale(1.02); box-shadow: 10px 10px 0px var(--light-orange); }
+.img-box:hover img { filter: grayscale(0%); }
+
+/* Text Cards */
+.text-card {
+    padding: 40px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-card h3 { font-family: 'Outfit'; font-size: 2rem; margin-bottom: 15px; color: var(--light-orange); }
+.text-card p { font-size: 1rem; font-weight: 500; }
+
+h1 { font-family: 'Outfit'; font-size: 8vw; line-height: 0.8; margin-bottom: 30px; }
+
+/* Slideshow & Marquee */
+.slideshow { width: 100%; height: 55vh; position: relative; border-bottom: 3px solid var(--dark); overflow: hidden; }
+.slide { position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 1s ease-in-out; background-size: cover; background-position: center; }
+.slide.active { opacity: 1; }
+
+.marquee { background: var(--butter-yellow); border-bottom: 3px solid var(--dark); padding: 12px 0; overflow: hidden; white-space: nowrap; }
+.marquee-content { display: inline-block; animation: scroll 20s linear infinite; font-weight: 900; font-family: 'Outfit'; }
+@keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }

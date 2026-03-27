@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="style.css"><title>PULP | Home</title></head>
+<body>
+    <header><div class="logo">PULP.</div>
+        <nav><a href="index.html">Home</a><a href="showcase.html">Menu</a><a href="locations.html">Find Us</a><a href="about.html">Story</a></nav>
+    </header>
+
+    <div class="slideshow">
+        <div class="slide active" style="background-image: url('group.png');"></div>
+        <div class="slide" style="background-image: url('display2.png');"></div>
+        <div class="slide" style="background-image: url('smoothie2.png');"></div>
+    </div>
+
+    <div class="marquee"><div class="marquee-content">FRESH ENERGY • DAILY VIBES • PULP CULTURE • FRESH ENERGY • DAILY VIBES • PULP CULTURE • </div></div>
+
+    <main class="container">
+        <h1>STAY<br><span style="color:var(--light-orange)">PEACHY.</span></h1>
+        <div class="bento" style="grid-auto-rows: 400px;">
+            <div class="text-card" style="grid-column: span 2; background: var(--soft-pink);">
+                <h3>THE NEW STANDARD</h3>
+                <p>Welcome to Pulp. We aren't just a juice bar; we're a lifestyle. Our smoothies are crafted for those who want real fuel without the fake stuff. High-energy, bold flavors, and always fresh.</p>
+            </div>
+            <div class="img-box" style="grid-column: span 2;"><img src="menu.png"></div>
+            <div class="img-box"><img src="display5.png"></div>
+            <div class="text-card">
+                <h3>VIBE CHECK</h3>
+                <p>Our locations are designed to be your third space. Come for the juice, stay for the atmosphere.</p>
+            </div>
+            <div class="img-box"><img src="bowl.png"></div>
+            <div class="img-box" style="grid-column: span 4; height: 300px;"><img src="smoothie1.png"></div>
+        </div>
+    </main>
+
+    <script>
+        let s = document.querySelectorAll('.slide'), c = 0;
+        setInterval(() => { s[c].classList.remove('active'); c = (c+1)%s.length; s[c].classList.add('active'); }, 3000);
+    </script>
+</body>
+</html>s
